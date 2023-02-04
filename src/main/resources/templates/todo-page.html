@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>To App</title>
+    <link href="/styles.css" rel="stylesheet">
+</head>
+<body>
+  <section>
+    <h2>Add Todo Item</h2>
+    <form action="/todo-app" method="post">
+      <input type="text" name="description">
+        <input type="checkbox" name="complete" value="true" checked>completed
+      <button>Add Item</button>
+    </form>
+      <section>
+          <ul th:if="${!todoList.isEmpty()}">
+              <li th:each="todoItem: ${todoList}">
+                  <label th:text="${todoItem.description}"></label>
+                  <a th:href="'/todo-app/update/' + ${todoItem.getId()}" th:if="${!todoItem.isComplete()}">&check;</a>
+                  <a th:href="'/todo-app/delete/' + ${todoItem.getId()}">&cross;</a>
+              </li>
+          </ul>
+          </section>
+    </section>
+</body>
+</html>

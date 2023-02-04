@@ -1,0 +1,19 @@
+body {
+    background: darkmagenta;
+    color: white;
+}
+h1, h2, h3 {
+    color: aliceblue;
+}
+
+a{
+    text-decoration: none;
+    background: aqua;
+    color: mediumslateblue;
+    padding: 10px;
+
+}
+li {
+
+    margin-bottom: 30px;
+}
